@@ -1,0 +1,62 @@
+
+
+h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 100px;
+    /* text-align: center; */
+}
+
+h2 {
+    font-family: 'Tangerine', cursive;
+    font-size: 30px;
+    margin: 0 1em .5em;
+    max-width: 200px;
+}
+
+header {
+    margin: 2em auto;
+    text-align: center;
+}
+
+.dropdown {
+    width: 200px;
+    margin: 2em auto;
+    font-size: 14px;
+}
+
+.thumbnail {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.card {
+    height: 320px;
+    width: 300px;
+    text-align: center;
+}
+
+
+
+.describe {
+    width: 200px;
+    font-size: 14px;
+    margin-left: 4em;
+}
+
+footer {
+    width: 90%;
+    margin: 4em auto;
+    border-top: .5px solid gray;
+    padding-top: 2em;
+}
+
+
+@media only screen and (max-width: 625px){
+    h1 {
+        font-size: 50px;
+    }
+
+    header {
+        width: 60%;
+    }
+}

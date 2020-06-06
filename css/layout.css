@@ -1,0 +1,18 @@
+
+header {
+    width: 90%;
+    margin: auto;
+}
+main{
+    width: 90%;
+    margin: 1em auto;
+    overflow:hidden;
+}
+
+div {
+    float: left;
+    margin: 1em auto;
+}
+
+
+
