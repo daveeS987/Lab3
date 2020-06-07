@@ -19,9 +19,9 @@ Reset the filters, then repopulate them using only keywords from the images curr
 
 Feature2: Mustache Templating
 Estimate of time needed to complete: 2 hour
-Start time:5:50
-Finish time:
-Actual time needed to complete:
+Start time: 5:50
+Finish time: 6:30
+Actual time needed to complete: 40min
 
 ## Feature 2: Templating
 Why are we implementing this feature?
@@ -32,3 +32,10 @@ Given that a user opens the application in the browser When the images are displ
 How are we implementing it?
 Create the appropriate Mustache template in your HTML with the same <h2>, <img>, and <p> elements as the jQuery template from the prior lab.
 Refactor the method that renders your images to use Mustache instead of making a copy with jQuery.
+
+Feature3: Flexbox
+Estimate of time needed to complete: 1hr
+Start time: 
+Finish time: 
+Actual time needed to complete: 
+

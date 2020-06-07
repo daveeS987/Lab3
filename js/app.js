@@ -13,17 +13,24 @@ function HornedAnimal(animal) {
 }
 
 //code referenced from Class-02 demo folder
-HornedAnimal.prototype.render = function () {
-  let $animalClone = $('.photo-template').clone();
-  $('section').append($animalClone);
-  $animalClone.find('h2').text(this.title);
-  $animalClone.find('img').attr('src', this.image_url);
-  $animalClone.find('alt').attr('alt', this.title);
-  $animalClone.find('p').text(this.description);
-  $animalClone.removeClass('photo-template');
-  $animalClone.attr('class', this.keyword);
-  console.log($('section'));
-  console.log('$animalClone :', $animalClone.html());
+// HornedAnimal.prototype.render = function () {
+//   let $animalClone = $('.photo-template').clone();
+//   $('section').append($animalClone);
+//   $animalClone.find('h2').text(this.title);
+//   $animalClone.find('img').attr('src', this.image_url);
+//   $animalClone.find('alt').attr('alt', this.title);
+//   $animalClone.find('p').text(this.description);
+//   $animalClone.removeClass('photo-template');
+//   $animalClone.attr('class', this.keyword);
+//   console.log($('section'));
+//   console.log('$animalClone :', $animalClone.html());
+// }
+
+//new function for Feature 2 Templating
+function render (object) {
+  let $template = $('#template').html();
+  let rendered = Mustache.render($template, object);
+  $('section').append(rendered);
 }
 
 
@@ -40,7 +47,7 @@ HornedAnimal.readJson = () => {
       data.forEach(item => {
         let animal = new HornedAnimal(item);
         keywordsArr.add(animal.keyword);
-        animal.render();
+        render(animal);
       });
 
       generateDropDown(keywordsArr);
@@ -62,7 +69,7 @@ $dropdown.on('change', filterKeywords);
 function filterKeywords() {
   let choice = $(this).val();
   if (choice) {
-    $('section').hide();
+    $('div').hide();
     $(`.${choice}`).fadeIn();
   }
 }
