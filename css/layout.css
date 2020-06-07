@@ -9,9 +9,14 @@ main{
     overflow:hidden;
 }
 
+section {
+    display:flex; 
+    flex-flow: row wrap;
+    justify-items: space-around;
+}
+
 div {
-    float: left;
-    margin: 1em auto;
+    margin: 2%;
 }
 
 
