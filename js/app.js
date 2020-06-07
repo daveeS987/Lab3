@@ -1,6 +1,7 @@
 'use strict';
 
 let page = 'Page1';
+let sortType = 'horns';
 let dataSource = './data/page-2.json';
 let animalKeywordArr = [];
 
@@ -27,12 +28,8 @@ function HornedAnimal(animal) {
 // }
 
 //new function for Feature 2 Templating
-function render (object) {
-  let $template = $('#template').html();
-  let rendered = Mustache.render($template, object);
-  $('section').append(rendered);
-}
 
+let animalArr = [];
 
 HornedAnimal.readJson = () => {
   if (page === 'Page1') {
@@ -40,20 +37,28 @@ HornedAnimal.readJson = () => {
   } else {
     dataSource = './data/page-2.json';
   }
-
+  
   $.ajax(dataSource)
     .then(data => {
       let keywordsArr = new Set();
       data.forEach(item => {
         let animal = new HornedAnimal(item);
         keywordsArr.add(animal.keyword);
-        render(animal);
+        animalArr.push(animal);
       });
-
+      render(animalArr);
       generateDropDown(keywordsArr);
     });
-};
+  };
+  console.log(animalArr);
 
+function render (array){
+  array.forEach(animal =>{
+  let $template = $('#template').html();
+  let rendered = Mustache.render($template, animal);
+  $('section').append(rendered);
+  });
+};
 
 function generateDropDown(array) {
   console.log('array inside generatedropdown', array);
@@ -82,8 +87,46 @@ function pageHandler() {
   page = $(this).val();
   $('section').empty();
   $('.dropdown').empty();
+  animalArr = [];
   $(() => HornedAnimal.readJson());
 
+}
+
+let $pageSort = $('.sortOption');
+$pageSort.on('change', sortHandler);
+
+function sortHandler() {
+  sortType = $(this).val();
+  $('section').empty();
+    if(sortType === 'horns'){
+      sortHorns(animalArr); 
+    }
+    else if (sortType === 'title'){
+      sortTitle(animalArr);
+    } 
+  render(animalArr);
+}
+
+function sortHorns(array){
+  array.sort((a,b) => {
+    return a.horns - b.horns
+  });
+
+}
+
+function sortTitle(array){
+  array.sort((a,b) =>{
+    var titleA = a.title.toUpperCase();
+    var titleB = b.title.toUpperCase();
+    if (titleA < titleB){
+      return -1;
+    }
+    if (titleA > titleB){
+      return 1;
+    }
+    return 0;
+  });
+console.log(animalArr);
 }
 
 

@@ -33,9 +33,23 @@ How are we implementing it?
 Create the appropriate Mustache template in your HTML with the same <h2>, <img>, and <p> elements as the jQuery template from the prior lab.
 Refactor the method that renders your images to use Mustache instead of making a copy with jQuery.
 
-Feature3: Flexbox
+## Feature3: Flexbox
 Estimate of time needed to complete: 1hr
-Start time: 
-Finish time: 
-Actual time needed to complete: 
+Start time: 6:30
+Finish time: 7:00
+Actual time needed to complete: 30 min
 
+## Feature 4: Sort the images
+Why are we implementing this feature?
+As a user, I want to be able to sort the images so that there is an order to their rendering.
+What are we going to implement?
+Given that a user is presented with sort options When the user clicks on one option Then the images should be sorted accordingly
+
+How are we implementing it?
+Add the ability for the user to sort the images by either title or by number of horns.
+Sort the images by one of the properties on page load. This should also apply to the second page of images.
+
+Estimate of time needed to complete: 2hr
+Start time: 7:00
+Finish time: 8:30
+Actual time needed to complete: 1.5
