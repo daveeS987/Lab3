@@ -1,5 +1,3 @@
-
-
 h1 {
     font-family: 'Tangerine', cursive;
     font-size: 100px;
@@ -35,7 +33,9 @@ header {
     text-align: center;
 }
 
-
+.photo-template {
+    display: none;
+}
 
 .describe {
     width: 200px;
@@ -50,12 +50,10 @@ footer {
     padding-top: 2em;
 }
 
-
-@media only screen and (max-width: 625px){
+@media only screen and (max-width: 625px) {
     h1 {
         font-size: 50px;
     }
-
     header {
         width: 60%;
     }
