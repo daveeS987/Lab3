@@ -3,7 +3,6 @@
 let page = 'Page1';
 let sortType = 'horns';
 let dataSource = './data/page-2.json';
-let animalKeywordArr = [];
 let animalArr = [];
 
 function HornedAnimal(animal) {
@@ -44,12 +43,10 @@ function render(array) {
 };
 
 function generateDropDown(array) {
-  console.log('array inside generatedropdown', array);
   array.forEach(item => {
     $('.dropdown').append(`<option value ="${item}">${item}</option>`);
   });
 }
-
 
 
 let $dropdown = $('.dropdown');
@@ -95,7 +92,6 @@ function sortHorns(array) {
   array.sort((a, b) => {
     return a.horns - b.horns
   });
-
 }
 
 function sortTitle(array) {
